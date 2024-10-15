@@ -1,0 +1,130 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{inter} 
+\renewcommand*\familydefault{\sfdefault}
+
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    top=1.8cm,
+    bottom=1in,
+    left=2.5cm,
+    right=2.5cm
+}
+
+\setcounter{secnumdepth}{0} % remove section numbering
+\pdfgentounicode=1 % make ATS friendly
+
+\usepackage{enumitem}
+\setlist[itemize]{
+    noitemsep,
+    left=2em
+}
+\setlist[description]{itemsep=0pt}
+\setlist[enumerate]{align=left}
+\usepackage[dvipsnames]{xcolor}
+\colorlet{icnclr}{gray}
+\usepackage{titlesec}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+\titleformat{\section}{\color{Sepia}\large\fontseries{black}\selectfont\uppercase}{}{}{\ruleafter}[\global\RemVStrue]
+\titleformat{\subsection}{\fontseries{bold}\selectfont}{}{}{\rvs}
+\titleformat{\subsubsection}{\color{gray}\fontseries{bold}\selectfont}{}{}{}
+
+\usepackage{xhfill} 
+\newcommand\ruleafter[1]{#1~\xrfill[.5ex]{1pt}[gray]} % add rule after title in .5 x-height 
+
+\newif\ifRemVS % remove vspace between \section & \subsection
+\newcommand{\rvs}{
+    \ifRemVS
+        \vspace{-1.5ex}
+    \fi
+    \global\RemVSfalse
+}
+
+\usepackage{fontawesome5}
+
+\usepackage[bookmarks=false]{hyperref} % [imp!]
+\hypersetup{ 
+    colorlinks=true,
+    urlcolor=Sepia,
+    pdftitle={My Resume},
+}
+
+\usepackage[page]{totalcount}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}	
+\fancyhf{}							
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+
+%== HEADER ==%
+\begin{center}      
+    {\fontsize{28}{28}\selectfont Pham Huy Duc} \\ \bigskip
+
+    {\color{icnclr}\faMapMarker} Da Lat City, Lam Dong, Vietnam \quad 
+    {\color{icnclr}\faEnvelope[regular]} \href{mailto:rei.jin.71@gmail.com}{rei.jin.71@gmail.com} \quad
+    {\color{icnclr}\faIcon{mobile-alt}} \href{tel:+840342566825}{+84 0342566825}
+\end{center}
+%==============
+
+\section{About Me}
+Coffee, coding, and problem-solving are my passions. I love using Golang for its simplicity and ease in building large systems.
+
+%==============
+\section{Work Experience}
+
+\subsection{Backend Developer \hfill \normalfont Jun 2023 - June 2024}
+\subsubsection{DOIT Solutions, Vietnam}
+\begin{itemize}
+    \item[\checkmark] Designed and structured a production optimization system for a biology lab using Domain-Driven Design (DDD).
+    \item[\checkmark] Implemented Redis caching and task scheduling for background processes.
+    \item[\checkmark] Developed a real-time error tracking and notification system.
+    \item[\checkmark] Collaborated closely with frontend developers using Vue.js to ensure seamless integration.
+\end{itemize}
+
+\subsection{Intern \hfill \normalfont Mar 2023 - Jun 2023}
+\subsubsection{DOIT Solutions, Vietnam}
+\begin{itemize}
+    \item[\checkmark] Contributed to warehouse management feature design and implementation for an agricultural enterprise.
+    \item[\checkmark] Developed frontend features using Vue.js and built RESTful APIs with Gin.
+    \item[\checkmark] Optimized database queries with Gorm and MySQL to improve system performance.
+    \item[\checkmark] Wrote unit tests and created command-line tools for backend support.
+\end{itemize}
+
+%==============
+\section{Honors \& Awards}
+\begin{itemize}
+    \item[\checkmark] Third place in the Lam Dong startup competition for developing a software to manage biology lab processes.
+\end{itemize}
+
+%==============
+\section{Skills}
+\subsection{Programming Languages}
+\begin{itemize}
+    \item[\checkmark] \textbf{Golang}: Extensive experience building backend systems and RESTful APIs.
+    \item[\checkmark] \textbf{Vue.js}: Built dynamic user interfaces for web applications.
+    \item[\checkmark] \textbf{Gin}: Developed secure and high-performance web services.
+    \item[\checkmark] \textbf{MySQL}: Designed, optimized, and managed databases for production environments.
+\end{itemize}
+
+\subsection{Tools \& Technologies}
+\begin{itemize}
+    \item[\checkmark] \textbf{Redis}: Implemented caching for efficient task processing and reduced latency.
+    \item[\checkmark] \textbf{Gorm}: Optimized complex database queries for higher performance.
+    \item[\checkmark] \textbf{Git}: Version-controlled projects with an emphasis on collaboration.
+\end{itemize}
+
+%==============
+\section{Certifications \& Awards}
+\begin{itemize}
+    \item[\checkmark] Third place, Lam Dong startup competition (2023)
+    \item[\checkmark] Certification Link: \href{https://explorer.perawallet.app/asset/2255455434/}{Blockchain Asset on PeraWallet}
+\end{itemize}
+
+\end{document}
